@@ -347,6 +347,13 @@ export const queryKeys = {
   indexStatus: (workspace: string) => ["indexStatus", workspace] as const,
 } as const;
 
+/**
+ * Query-string keys that should be preserved across in-app navigation.
+ * Captured on first load, stashed in sessionStorage, and re-appended to URLs
+ * that don't already carry them. See `components/providers/preserve-query-params.tsx`.
+ */
+export const PRESERVED_QUERY_PARAMS = ["coder_session_token"] as const;
+
 /** UI constants */
 export const SIDEBAR_WIDTH = 280;
 export const ACTIVITY_PANEL_WIDTH = 380;
